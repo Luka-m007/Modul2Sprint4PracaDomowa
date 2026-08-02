@@ -7,10 +7,10 @@ const CardWrapper = styled.div`
 	/* align-items: center; */
 	/* justify-content: center; */
 	width: 230px;
-    height: 300px;
+	height: 300px;
 	border-radius: 5px;
-	background-color: #e4e4e4;
-	border: 2px solid black;
+	background-color: ${({ theme }) => theme.cardBackground};
+	border: 2px solid ${({ theme }) => theme.cardBorder};
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 	flex: 1 1 auto;
 `
@@ -27,8 +27,8 @@ const TitleAndButtonWrapper = styled.div`
 	padding: 10px;
 `
 const Title = styled.h2`
-    font-size: 1.4rem;
-    margin: .5rem 0 0;
+	font-size: 1.4rem;
+	margin: 0.5rem 0 0;
 `
 
 export const PictureCard = ({ src, alt, children }) => {

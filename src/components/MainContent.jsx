@@ -7,10 +7,9 @@ const MainContentWrapper = styled.div`
 	justify-content: center;
 	gap: 20px;
 	padding: 20px;
-	/* margin: 5px; */
 `
 
-export const MainContext = () => {
+export const MainContent = () => {
 	const { data, error, isLoading } = useFetchData()
 
 	return (

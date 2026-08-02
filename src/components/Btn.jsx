@@ -11,6 +11,7 @@ const Button = styled.button`
 	font-size: 1rem;
 	text-transform: uppercase;
 	cursor: pointer;
+	color: ${({ theme }) => theme.text};
 `
 
 export const Btn = ({ children, ...rest }) => {

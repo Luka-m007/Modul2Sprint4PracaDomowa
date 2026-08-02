@@ -1,11 +1,13 @@
 import './App.css'
-import { MainContext, HeaderContent } from './components/index'
+import { MainContent, HeaderContent, ThemeProviderWrapper } from './components/index'
 
 export function App() {
 	return (
 		<>
-			<HeaderContent />
-			<MainContext />
+			<ThemeProviderWrapper>
+				<HeaderContent />
+				<MainContent />
+			</ThemeProviderWrapper>
 		</>
 	)
 }
