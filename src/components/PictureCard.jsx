@@ -4,15 +4,12 @@ import styled from 'styled-components'
 const CardWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	/* align-items: center; */
-	/* justify-content: center; */
-	width: 230px;
-	height: 300px;
+	width: 100%;
+	max-height: 300px;
 	border-radius: 5px;
 	background-color: ${({ theme }) => theme.cardBackground};
 	border: 2px solid ${({ theme }) => theme.cardBorder};
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-	flex: 1 1 auto;
 `
 const Image = styled.img`
 	width: 100%;
@@ -31,13 +28,18 @@ const Title = styled.h2`
 	margin: 0.5rem 0 0;
 `
 
-export const PictureCard = ({ src, alt, children }) => {
+export const PictureCard = ({ src, alt, children, id, onSelect }) => {
+	const handleClick = () => {
+		console.log(`ID kliknietej karty: ${id}`)
+		onSelect({ id, src, alt, name: children })
+	}
+
 	return (
 		<CardWrapper>
 			<Image src={src} alt={alt} />
 			<TitleAndButtonWrapper>
 				<Title>{children}</Title>
-				<Btn>Learn More</Btn>
+				<Btn onClick={handleClick}>Learn More</Btn>
 			</TitleAndButtonWrapper>
 		</CardWrapper>
 	)

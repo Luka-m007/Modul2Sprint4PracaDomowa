@@ -1,6 +1,7 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useState, useContext } from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
-import { lightTheme, darkTheme } from './theme'
+import { lightTheme, darkTheme } from '../components/Theme/theme'
 
 const ThemeContext = createContext()
 

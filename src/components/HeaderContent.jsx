@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useThemeMode } from './index'
+import { useThemeMode, CustomSwitch } from './index'
 
 const HeaderWrapper = styled.div`
 	display: flex;
@@ -7,7 +7,6 @@ const HeaderWrapper = styled.div`
 	align-items: center;
 	border-bottom: 3px solid ${({ theme }) => theme.headerLine};
 	padding: 30px 20px;
-
 `
 
 export const HeaderContent = () => {
@@ -16,7 +15,7 @@ export const HeaderContent = () => {
 		<>
 			<HeaderWrapper>
 				<h1>Disney APP</h1>
-				<button onClick={() => setIsDark(!isDark)}>Change Theme</button>
+				<CustomSwitch onClick={() => setIsDark(!isDark)} />
 			</HeaderWrapper>
 		</>
 	)
