@@ -29,15 +29,12 @@ export const MainContent = () => {
 				{data &&
 					data.data.map(character => (
 						<PictureCard
-							onSelect={character => {
+							onSelect={() => {
 								setSelectedCharacter(character)
 							}}
-							id={character._id}
+							character={character}
 							key={character._id}
-							src={character.imageUrl}
-							alt={`${character.name} image`}>
-							{character.name}
-						</PictureCard>
+						/>
 					))}
 
 				{selectedCharacter && modal}

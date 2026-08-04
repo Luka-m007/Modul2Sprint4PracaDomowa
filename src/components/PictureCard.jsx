@@ -7,7 +7,7 @@ const CardWrapper = styled.div`
 	width: 100%;
 	max-height: 300px;
 	border-radius: 5px;
-	background-color: ${({ theme }) => theme.cardBackground};
+	background-color: ${({ theme }) => theme.cardBgc};
 	border: 2px solid ${({ theme }) => theme.cardBorder};
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 `
@@ -28,17 +28,17 @@ const Title = styled.h2`
 	margin: 0.5rem 0 0;
 `
 
-export const PictureCard = ({ src, alt, children, id, onSelect }) => {
+export const PictureCard = ({ character, onSelect }) => {
+	// console.log(`character`, character)
 	const handleClick = () => {
-		console.log(`ID kliknietej karty: ${id}`)
-		onSelect({ id, src, alt, name: children })
+		// console.log(`ID kliknietej karty: ${character._id}`)
+		onSelect(character)
 	}
-
 	return (
 		<CardWrapper>
-			<Image src={src} alt={alt} />
+			<Image src={character.imageUrl} alt={character.name} />
 			<TitleAndButtonWrapper>
-				<Title>{children}</Title>
+				<Title>{character.name}</Title>
 				<Btn onClick={handleClick}>Learn More</Btn>
 			</TitleAndButtonWrapper>
 		</CardWrapper>

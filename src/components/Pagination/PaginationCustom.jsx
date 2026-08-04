@@ -5,7 +5,7 @@ import { useThemeMode } from '../index'
 export function PaginationCustom({ count, page, onChange }) {
 	const { isDark } = useThemeMode()
 	return (
-		<Stack spacing={2} sx={{ alignItems: 'center' }}>
+		<Stack spacing={2} sx={{ alignItems: 'center', padding: '20px' }}>
 			<Pagination
 				count={count}
 				page={page}
