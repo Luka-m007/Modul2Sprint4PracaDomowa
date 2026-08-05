@@ -1,4 +1,13 @@
 import './App.css'
+import { MainContent, HeaderContent, ThemeProviderWrapper } from './components/index'
+
 export function App() {
-	return <></>
+	return (
+		<>
+			<ThemeProviderWrapper>
+				<HeaderContent />
+				<MainContent />
+			</ThemeProviderWrapper>
+		</>
+	)
 }

@@ -1,0 +1,45 @@
+import { Btn } from './index.js'
+import styled from 'styled-components'
+
+const CardWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-height: 300px;
+	border-radius: 5px;
+	background-color: ${({ theme }) => theme.cardBgc};
+	border: 2px solid ${({ theme }) => theme.headerLine};
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+`
+const Image = styled.img`
+	width: 100%;
+	height: 50%;
+	object-fit: cover;
+`
+
+const TitleAndButtonWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex: 1 1 auto;
+	padding: 10px;
+`
+const Title = styled.h2`
+	font-size: 2rem;
+	margin: 0.5rem 0 0;
+`
+
+export const PictureCard = ({ character, onSelect }) => {
+	const handleClick = () => {
+		onSelect(character)
+	}
+	return (
+		<CardWrapper>
+			<Image src={character.imageUrl} alt={character.name} />
+			<TitleAndButtonWrapper>
+				<Title>{character.name}</Title>
+				<Btn onClick={handleClick}>Learn More</Btn>
+			</TitleAndButtonWrapper>
+		</CardWrapper>
+	)
+}
