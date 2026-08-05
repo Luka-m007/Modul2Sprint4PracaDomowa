@@ -11,6 +11,10 @@ const MainContentWrapper = styled.div`
 	padding: 20px;
 `
 
+const P = styled.p`
+	font-size: 5rem;
+`
+
 export const MainContent = () => {
 	const { data, error, isLoading, page, setPage, totalPages } = useFetchData()
 	const [selectedCharacter, setSelectedCharacter] = useState(null)
@@ -23,9 +27,8 @@ export const MainContent = () => {
 	return (
 		<>
 			<MainContentWrapper>
-				{console.log('dataAPI', data)}
-				{isLoading && <p>Loading...</p>}
-				{error && <p>Error fetching data</p>}
+				{isLoading && <P>Loading...</P>}
+				{error && <P>Error fetching data</P>}
 				{data &&
 					data.data.map(character => (
 						<PictureCard

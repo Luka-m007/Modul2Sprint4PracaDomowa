@@ -8,12 +8,13 @@ const CardWrapper = styled.div`
 	max-height: 300px;
 	border-radius: 5px;
 	background-color: ${({ theme }) => theme.cardBgc};
-	border: 2px solid ${({ theme }) => theme.cardBorder};
+	border: 2px solid ${({ theme }) => theme.headerLine};
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 `
 const Image = styled.img`
 	width: 100%;
 	height: 50%;
+	object-fit: cover;
 `
 
 const TitleAndButtonWrapper = styled.div`
@@ -24,14 +25,12 @@ const TitleAndButtonWrapper = styled.div`
 	padding: 10px;
 `
 const Title = styled.h2`
-	font-size: 1.4rem;
+	font-size: 2rem;
 	margin: 0.5rem 0 0;
 `
 
 export const PictureCard = ({ character, onSelect }) => {
-	// console.log(`character`, character)
 	const handleClick = () => {
-		// console.log(`ID kliknietej karty: ${character._id}`)
 		onSelect(character)
 	}
 	return (

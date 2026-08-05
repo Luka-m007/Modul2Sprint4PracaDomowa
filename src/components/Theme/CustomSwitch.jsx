@@ -59,10 +59,14 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 	},
 }))
 
-export function CustomSwitch({ onClick }) {
+export function CustomSwitch({ onClick, isDark }) {
 	return (
 		<FormGroup>
-			<FormControlLabel control={<MaterialUISwitch sx={{ m: 1 }}  onClick={onClick} />} label='Theme' />
+			<FormControlLabel
+				control={<MaterialUISwitch checked={isDark} sx={{ m: 1 }} onClick={onClick} />}
+				label='Theme'
+				sx={{ '& .MuiFormControlLabel-label': { fontSize: '1.3rem' } }}
+			/>
 		</FormGroup>
 	)
 }

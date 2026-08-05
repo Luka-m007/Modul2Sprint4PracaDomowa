@@ -1,6 +1,6 @@
 import Pagination from '@mui/material/Pagination'
 import Stack from '@mui/material/Stack'
-import { useThemeMode } from '../index'
+import { useThemeMode } from './index'
 
 export function PaginationCustom({ count, page, onChange }) {
 	const { isDark } = useThemeMode()
@@ -9,12 +9,11 @@ export function PaginationCustom({ count, page, onChange }) {
 			<Pagination
 				count={count}
 				page={page}
-				onChange={(e, value) => {
-					onChange(e, value)
-				}}
+				onChange={onChange}
 				sx={{
 					'& .MuiPaginationItem-root': {
 						color: isDark ? '#FAFAFA' : '#363537',
+						fontSize: '1.3rem',
 					},
 				}}
 			/>

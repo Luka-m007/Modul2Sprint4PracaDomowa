@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 import { useThemeMode, CustomSwitch } from './index'
 
+const HeadTitle = styled.h1`
+	font-size: 2.7rem;
+`
+
 const HeaderWrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
@@ -14,8 +18,8 @@ export const HeaderContent = () => {
 	return (
 		<>
 			<HeaderWrapper>
-				<h1>Disney APP</h1>
-				<CustomSwitch onClick={() => setIsDark(!isDark)} />
+				<HeadTitle>Disney APP</HeadTitle>
+				<CustomSwitch isDark={isDark} onClick={() => setIsDark(!isDark)} />
 			</HeaderWrapper>
 		</>
 	)
